@@ -59,9 +59,11 @@ let veryOldInventors = []
 
 // Enter your solution code here:
 
+veryOldInventors = inventors.filter((inventor)=>{
+  return inventor.year >= 1500 && inventor.year <= 1599;
+});
 
-
-Check your return value:
+//Check your return value:
 console.log('Exercise 1 My Result: ', veryOldInventors)
 console.log('Exercise 1 Correct Result: ',
     [
@@ -84,26 +86,28 @@ let inventorNames = []
 
 // Enter your solution code here:
 
-
+inventorNames = inventors.map((inventor)=>{
+  return {first: inventor.first, last: inventor.last}
+});
 
 // Check your return value:
-// console.log('Exercise 2 My Result: ', inventorNames)
-// console.log('Exercise 2 Correct Result: ',
-//     [
-//         { first: 'Albert', last: 'Einstein' },
-//         { first: 'Isaac', last: 'Newton' },
-//         { first: 'Galileo', last: 'Galilei' },
-//         { first: 'Marie', last: 'Curie' },
-//         { first: 'Johannes', last: 'Kepler' },
-//         { first: 'Nicolaus', last: 'Copernicus' },
-//         { first: 'Max', last: 'Planck' },
-//         { first: 'Katherine', last: 'Blodgett' },
-//         { first: 'Ada', last: 'Lovelace' },
-//         { first: 'Sarah E.', last: 'Goode' },
-//         { first: 'Lise', last: 'Meitner' },
-//         { first: 'Hanna', last: 'Hammarström' }
-//     ]
-// )
+console.log('Exercise 2 My Result: ', inventorNames)
+console.log('Exercise 2 Correct Result: ',
+    [
+        { first: 'Albert', last: 'Einstein' },
+        { first: 'Isaac', last: 'Newton' },
+        { first: 'Galileo', last: 'Galilei' },
+        { first: 'Marie', last: 'Curie' },
+        { first: 'Johannes', last: 'Kepler' },
+        { first: 'Nicolaus', last: 'Copernicus' },
+        { first: 'Max', last: 'Planck' },
+        { first: 'Katherine', last: 'Blodgett' },
+        { first: 'Ada', last: 'Lovelace' },
+        { first: 'Sarah E.', last: 'Goode' },
+        { first: 'Lise', last: 'Meitner' },
+        { first: 'Hanna', last: 'Hammarström' }
+    ]
+)
 
 // Array.prototype.sort()
 
@@ -113,26 +117,28 @@ let sortedByBirthYear = []
 
 // Enter your solution code here:
 
-
+sortedByBirthYear = inventors.sort((a, b)=>{
+  return a.year - b.year;
+});
 
 // Check your return value:
-// console.log('Exercise 3 My Result: ', sortedByBirthYear)
-// console.log('Exercise 3 Correct Result: ',
-//     [
-//         { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
-//         { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
-//         { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
-//         { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
-//         { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
-//         { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 },
-//         { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
-//         { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
-//         { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
-//         { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
-//         { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
-//         { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 }
-//     ]
-// )
+console.log('Exercise 3 My Result: ', sortedByBirthYear)
+console.log('Exercise 3 Correct Result: ',
+    [
+        { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
+        { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
+        { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
+        { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
+        { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
+        { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 },
+        { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
+        { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
+        { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
+        { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
+        { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
+        { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 }
+    ]
+)
 
 // Array.prototype.find()
 
@@ -146,11 +152,13 @@ let inventorNamedAda = {}
 
 // Enter you solution code here:
 
-
+inventorNamedAda = inventors.find ((inventor)=>{
+  return inventor.first === 'Ada';
+});
 
 // Check your return value:
-// console.log('Exercise 4 My Result: ', inventorNamedAda)
-// console.log('Exercise 4 Correct Result: ', { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 })
+console.log('Exercise 4 My Result: ', inventorNamedAda)
+console.log('Exercise 4 Correct Result: ', { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 })
 
 // Array.prototype.map()
 
@@ -164,54 +172,57 @@ let firstLast = []
 
 // Enter your solution code here:
 
-
+firstLast = people.map((name)=>{
+  let [first, last] = name.split(',');
+  return `${first}${last}`
+});
 
 // Check your return value:
-// console.log('Exercise 5 My Result: ', firstLast)
-// console.log('Exercise 5 Correct Result: ',
-//     [
-//         'Carl Becker',
-//         'Samuel Beckett',
-//         'Mick Beddoes',
-//         'Henry Beecher',
-//         'Ludwig Beethoven',
-//         'Menachem Begin',
-//         'Hilaire Belloc',
-//         'Saul Bellow',
-//         'Robert Benchley',
-//         'Peter Benenson',
-//         'David Ben-Gurion',
-//         'Walter Benjamin',
-//         'Tony Benn',
-//         'Chester Bennington',
-//         'Leana Benson',
-//         'Silas Bent',
-//         'Lloyd Bentsen',
-//         'Ric Berger',
-//         'Ingmar Bergman',
-//         'Luciano Berio',
-//         'Milton Berle',
-//         'Irving Berlin',
-//         'Eric Berne',
-//         'Sandra Bernhard',
-//         'Yogi Berra',
-//         'Halle Berry',
-//         'Wendell Berry',
-//         'Erin Bethea',
-//         'Aneurin Bevan',
-//         'Ken Bevel',
-//         'Joseph Biden',
-//         'Ambrose Bierce',
-//         'Steve Biko',
-//         'Josh Billings',
-//         'Frank Biondo',
-//         'Augustine Birrell',
-//         'Elk Black',
-//         'Robert Blair',
-//         'Tony Blair',
-//         'William Blake'
-//     ]
-// )
+console.log('Exercise 5 My Result: ', firstLast)
+console.log('Exercise 5 Correct Result: ',
+    [
+        'Carl Becker',
+        'Samuel Beckett',
+        'Mick Beddoes',
+        'Henry Beecher',
+        'Ludwig Beethoven',
+        'Menachem Begin',
+        'Hilaire Belloc',
+        'Saul Bellow',
+        'Robert Benchley',
+        'Peter Benenson',
+        'David Ben-Gurion',
+        'Walter Benjamin',
+        'Tony Benn',
+        'Chester Bennington',
+        'Leana Benson',
+        'Silas Bent',
+        'Lloyd Bentsen',
+        'Ric Berger',
+        'Ingmar Bergman',
+        'Luciano Berio',
+        'Milton Berle',
+        'Irving Berlin',
+        'Eric Berne',
+        'Sandra Bernhard',
+        'Yogi Berra',
+        'Halle Berry',
+        'Wendell Berry',
+        'Erin Bethea',
+        'Aneurin Bevan',
+        'Ken Bevel',
+        'Joseph Biden',
+        'Ambrose Bierce',
+        'Steve Biko',
+        'Josh Billings',
+        'Frank Biondo',
+        'Augustine Birrell',
+        'Elk Black',
+        'Robert Blair',
+        'Tony Blair',
+        'William Blake'
+    ]
+)
 
 // Array.prototype.some()
 
@@ -228,8 +239,8 @@ let isAdultPresent = null
 
 
 // Check your return value:
-// console.log('Exercise 6 My Result: ', isAdultPresent)
-// console.log('Exercise 6 Correct Result: ', true)
+console.log('Exercise 6 My Result: ', isAdultPresent)
+console.log('Exercise 6 Correct Result: ', true)
 
 // Array.prototype.some()
 
@@ -239,7 +250,7 @@ let isAdultPresent = null
 // - Use the Array.prototype.some() method to check if any person in the array is 18 years old or older.
 // - Store the result (true or false) in the variable 'isAdultPresent'. 
 
-let isAdultPresent = null
+//let isAdultPresent = null
 
 // Enter your solution code here:
 
@@ -257,7 +268,7 @@ let isAdultPresent = null
 // - Use the Array.prototype.every() method to verify if every individual in the array is at least 19 years old.
 // - Store the result (true or false) in the variable 'isEveryone19OrOlder'.
 
-let isEveryone19OrOlder = null
+//let isEveryone19OrOlder = null
 
 // Enter your solution code here:
 
@@ -274,7 +285,7 @@ let isEveryone19OrOlder = null
 // - Assign the found comment object to the variable 'commentById'.
 
 
-let commentById = {}
+//let commentById = {}
 
 // Enter your solution code here:
 
@@ -290,7 +301,7 @@ let commentById = {}
 
 // - Store the index in the variable 'idx'.
 
-let idx = null
+//let idx = null
 
 // Enter your solution code here:
 
