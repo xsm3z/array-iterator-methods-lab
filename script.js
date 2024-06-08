@@ -299,3 +299,57 @@ idx = comments.findIndex((comment)=>{
 console.log('Exercise 9 My Result: ', idx)
 console.log('Exercise 9 Correct Result: ', 3)
 
+// Array.prototype.reduce()
+
+// Bonus 1. Calculate the Combined Lifespan of Inventors Using Array.prototype.reduce()
+
+// - Each object in the array includes properties: 'first', 'last', 'year' (birth year), and 'passed' (year of death).
+// - Use the Array.prototype.reduce() method to sum up the total years lived by all the inventors.
+// - Store the total sum in the variable 'totalYearsLived'.
+
+// Hints:
+// - Inside the reduce callback function, calculate the lifespan of each inventor (passed - year).
+// - Accumulate this lifespan in the 'totalYearsLived' variable.
+// - Remember, reduce takes a callback function and an initial value for the accumulator.
+
+let totalYearsLived = 0
+
+// Enter your solution code here:
+
+totalYearsLived = inventors.reduce((total, inventor)=>{
+  total = inventor.passed - inventor.year;
+  return total
+});
+
+// Check your return value:
+console.log('Bonus 1 My Result: ', totalYearsLived)
+console.log('Bonus 1 Correct Result: ', 861)
+
+// Array.prototype.reduce()
+
+// Bonus 2. Tallying Travel Methods Using Array.prototype.reduce(). Count the number of times each travel method appears in the 'travelMethods' array.
+
+// - The resulting object should have keys as the travel methods ('car', 'truck', 'bike', etc.) and values as their respective counts.
+// - Store this object in the variable 'travelMethodCounts'.
+
+// Hints:
+// - Inside the reduce function, check if the travel method already exists as a key in your accumulator object. If it does, increment its count. If not, add it with a count of 1.
+// - Since you want to return an object, be sure to pass an empty {} for the initial value of the "accumulator".
+
+
+let travelMethodCounts = {}
+
+// Enter your solution code here:
+
+travelMethodCounts = travelMethods.reduce((count, method)=>{
+  if (count[method]) {
+    count[method]++;
+  } else {
+    count[method] = 1;
+  } 
+  return count;
+});
+
+// Check your return value:
+console.log('Bonus 2 My Result: ', travelMethodCounts)
+console.log('Bonus 2 Correct Result: ', { car: 5, truck: 3, bike: 2, walk: 2, van: 2 })
