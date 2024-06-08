@@ -236,31 +236,13 @@ let isAdultPresent = null
 
 // Enter your solution code here:
 
-
+isAdultPresent = devs.some((dev)=>{
+  return 2024 - dev.year >= 18
+});
 
 // Check your return value:
 console.log('Exercise 6 My Result: ', isAdultPresent)
 console.log('Exercise 6 Correct Result: ', true)
-
-// Array.prototype.some()
-
-// 6. Determine if there is at least one person in the devs array who is 18 years old or older.
-
-// - You have an array of people with their respective ages.
-// - Use the Array.prototype.some() method to check if any person in the array is 18 years old or older.
-// - Store the result (true or false) in the variable 'isAdultPresent'. 
-
-//let isAdultPresent = null
-
-// Enter your solution code here:
-
-
-
-// Check your return value:
-// console.log('Exercise 6 My Result: ', isAdultPresent)
-// console.log('Exercise 6 Correct Result: ', true)
-
-// Array.prototype.every()
 
 // 7. Use Array.prototype.every() to determine if every person in the devs array is 19 years old or older.
 
@@ -268,15 +250,17 @@ console.log('Exercise 6 Correct Result: ', true)
 // - Use the Array.prototype.every() method to verify if every individual in the array is at least 19 years old.
 // - Store the result (true or false) in the variable 'isEveryone19OrOlder'.
 
-//let isEveryone19OrOlder = null
+let isEveryone19OrOlder = null
 
 // Enter your solution code here:
 
-
+isEveryone19OrOlder = devs.every((dev)=>{
+  return 2024 - dev.year >= 19
+});
 
 // Check your return value:
-// console.log('Exercise 7 My Result: ', isEveryone19OrOlder)
-// console.log('Exercise 7 Correct Result: ', false)
+console.log('Exercise 7 My Result: ', isEveryone19OrOlder)
+console.log('Exercise 7 Correct Result: ', false)
 
 // Array.prototype.find()
 
@@ -285,15 +269,17 @@ console.log('Exercise 6 Correct Result: ', true)
 // - Assign the found comment object to the variable 'commentById'.
 
 
-//let commentById = {}
+let commentById = {}
 
 // Enter your solution code here:
 
-
+commentById = comments.find((comment)=>{
+  return comment.id === 823423
+})
 
 // Check your return value:
-// console.log('Exercise 8 My Result: ', commentById)
-// console.log('Exercise 8 Correct Result: ', { text: 'Super good', id: 823423 })
+console.log('Exercise 8 My Result: ', commentById)
+console.log('Exercise 8 Correct Result: ', { text: 'Super good', id: 823423 })
 
 // Array.prototype.findIndex()
 
@@ -301,12 +287,15 @@ console.log('Exercise 6 Correct Result: ', true)
 
 // - Store the index in the variable 'idx'.
 
-//let idx = null
+let idx = null
 
 // Enter your solution code here:
 
-
+idx = comments.findIndex((comment)=>{
+  return comment.id === 123523
+});
 
 // Check your return value:
-// console.log('Exercise 9 My Result: ', idx)
-// console.log('Exercise 9 Correct Result: ', 3)
+console.log('Exercise 9 My Result: ', idx)
+console.log('Exercise 9 Correct Result: ', 3)
+
